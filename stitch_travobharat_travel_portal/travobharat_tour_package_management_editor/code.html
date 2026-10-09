@@ -1,0 +1,1061 @@
+<!DOCTYPE html><html class="h-full scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TravoBharat — Tour Package Management &amp; Editor</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#dae2fd",
+            "surface": "#faf8ff",
+            "on-secondary-fixed-variant": "#005049",
+            "background": "#faf8ff",
+            "outline-variant": "#c0c8cd",
+            "secondary-container": "#86f2e4",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#ffdf98",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed": "#251a00",
+            "outline": "#70787d",
+            "surface-container": "#eaedff",
+            "primary-container": "#1a5f7a",
+            "tertiary-fixed-dim": "#eec14b",
+            "primary": "#00475e",
+            "inverse-on-surface": "#eef0ff",
+            "on-surface": "#131b2e",
+            "secondary": "#006a61",
+            "tertiary-container": "#6f5400",
+            "secondary-fixed-dim": "#6bd8cb",
+            "surface-variant": "#dae2fd",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#c0e8ff",
+            "on-primary-fixed": "#001e2b",
+            "on-primary-container": "#9bd7f7",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "inverse-primary": "#92cfee",
+            "on-secondary-container": "#006f66",
+            "on-background": "#131b2e",
+            "surface-tint": "#236580",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#00201d",
+            "on-surface-variant": "#40484d",
+            "primary-fixed-dim": "#92cfee",
+            "on-tertiary-container": "#f7c952",
+            "on-tertiary-fixed-variant": "#5a4300",
+            "on-primary-fixed-variant": "#004d66",
+            "error": "#ba1a1a",
+            "inverse-surface": "#283044",
+            "on-secondary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "tertiary": "#523e00",
+            "surface-dim": "#d2d9f4",
+            "secondary-fixed": "#89f5e7",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary-container selection:text-on-secondary-fixed-variant">
+<!-- TOP ADMIN BAR -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-sm border-b border-outline-variant/30 px-4 sm:px-6 lg:px-8 py-3 transition-colors">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+<!-- Brand & Breadcrumb Cluster -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<img alt="TravoBharat Logo" class="h-12 w-auto object-contain max-h-14" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAecWKpONZPe0BiorHSaNJZEEr-ove8i_SWuqFRsW-7qojOvZBwGFf4lAp48YhEtxCNhC2m9dmk9dibtO63NyV_smq670Qr-qY7oOpuReGgqE7q246TBeoDgPEqQ-CABybbiYO8atmLkU9MNDGKeatnzgh5nplLsBmDK7hDA2we9GHbeGJUiXk8IrnGOBLtA2x6Hd4csU9596H6581tzk0rKhcwtB3VhGGojAZF0ondZ22Mv8Sr9K__">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight leading-none">TravoBharat</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant">CMS v2.4</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold mt-0.5">Admin Control Center</span>
+</div>
+</div>
+<div class="hidden lg:flex items-center text-outline-variant select-none">
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<nav aria-label="Breadcrumb" class="hidden lg:flex items-center gap-2 font-label-md text-label-md">
+<span class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Admin</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Tour Management</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-semibold">Package Builder &amp; Editor</span>
+</nav>
+</div>
+<!-- Status indicator & Action Group -->
+<div class="flex items-center gap-2.5 sm:gap-3">
+<!-- Package Status Switcher -->
+<div class="hidden sm:flex items-center bg-surface-container rounded-lg p-1 border border-outline-variant/30 text-xs font-semibold">
+<button class="px-2.5 py-1 rounded-md bg-secondary text-on-secondary shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="">Published</span>
+</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-primary transition-colors">Draft</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-primary transition-colors">Archived</button>
+</div>
+<!-- Preview Public Link -->
+<a class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-primary hover:bg-surface-container font-label-md text-label-md transition-colors border border-outline-variant/40" href="#section-preview">
+<span class="material-symbols-outlined text-primary text-base" data-icon="visibility">visibility</span>
+<span class="hidden sm:inline">Preview on Public Site</span>
+</a>
+<!-- Save Draft -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-secondary font-label-md text-label-md border border-secondary transition-all active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="save">save</span>
+<span class="">Save Draft</span>
+</button>
+<!-- Publish & Sync Changes -->
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-md transition-all active:scale-95 font-semibold" type="button">
+<span class="material-symbols-outlined text-on-primary text-base" data-icon="sync">sync</span>
+<span class="">Publish &amp; Sync</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-8">
+<!-- COLLAPSIBLE LEFT ADMIN SIDEBAR -->
+<aside aria-label="Admin Navigation" class="w-64 shrink-0 hidden md:flex flex-col gap-6">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 shadow-sm">
+<div class="px-3 py-2 mb-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">CMS Suite</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant">v2.4 Active</span>
+</div>
+<nav class="flex flex-col gap-1 font-label-md text-label-md">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="">Dashboard</span>
+</a>
+<!-- Active highlight: Tour Management -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-primary-container text-on-primary font-semibold shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="">Tour Management</span>
+</div>
+<span class="material-symbols-outlined text-on-primary-container" data-icon="expand_more">expand_more</span>
+</a>
+<div class="ml-9 flex flex-col gap-1 py-1 border-l-2 border-outline-variant/30 pl-3">
+<a class="text-on-surface-variant hover:text-primary py-1 font-normal" href="#">Packages List</a>
+<a class="text-primary font-bold py-1 flex items-center gap-1.5" href="#">
+<span class="">Add &amp; Edit Package</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</a>
+<a class="text-on-surface-variant hover:text-primary py-1 font-normal" href="#">Itinerary Templates</a>
+<a class="text-on-surface-variant hover:text-primary py-1 font-normal" href="#">Departures &amp; Batches</a>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="pin_drop">pin_drop</span>
+<span class="">Destinations Hub</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="">Bookings &amp; Inquiries</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="hotel">hotel</span>
+<span class="">Hotels &amp; Vendors</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="reviews">reviews</span>
+<span class="">Customer Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="">SEO &amp; Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="">Global Settings</span>
+</a>
+</nav>
+</div>
+<!-- Quick Help & Support Card -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant/30 p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="">Help &amp; Lead Desk</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse" title="Connected"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant WhatsApp sync active for destination inquiries &amp; live assistance.</p>
+<div class="flex items-center gap-2 p-2 bg-surface-container-lowest rounded-lg border border-outline-variant/20 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="chat">chat</span>
+<span class="font-semibold">+91 7417647288</span>
+</div>
+</div>
+</aside>
+<!-- MAIN CMS CONTENT CANVAS -->
+<main class="flex-1 min-w-0 flex flex-col gap-6">
+<!-- HEADER STATUS & TITLE BAR -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-4">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Uttarakhand Weekend Escape</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-fixed-variant font-bold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Published &amp; Live
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                Uttarakhand
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="flex items-center gap-1 font-mono text-outline bg-surface-container-low px-2 py-0.5 rounded text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="link">link</span>
+                /packages/uttarakhand-weekend-escape
+              </span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                Last updated 2 hours ago by <strong class="text-on-surface font-medium ml-1">Anurag Sharma</strong>
+</span>
+</div>
+</div>
+<!-- Quick Action Buttons on Header -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base" data-icon="history">history</span>
+              Revision History Log
+            </button>
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base" data-icon="content_copy">content_copy</span>
+              Duplicate Package
+            </button>
+</div>
+</div>
+<!-- STICKY ANCHOR TABS FOR QUICK NAVIGATION -->
+<div class="border-t border-outline-variant/20 pt-4 mt-2 overflow-x-auto">
+<nav aria-label="Package Sections" class="flex items-center gap-2 min-w-max pb-1 font-label-md text-label-md">
+<a class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center gap-1.5" href="#section-a">
+<span class="material-symbols-outlined text-base" data-icon="info">info</span>
+<span class="">Tab 1: Basic Info</span>
+</a>
+<a class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center gap-1.5" href="#section-b">
+<span class="material-symbols-outlined text-base" data-icon="payments">payments</span>
+<span class="">Tab 2: Pricing &amp; Discounts</span>
+</a>
+<a class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center gap-1.5" href="#section-c">
+<span class="material-symbols-outlined text-base" data-icon="photo_library">photo_library</span>
+<span class="">Tab 3: Media &amp; Gallery</span>
+</a>
+<a class="px-3 py-2 rounded-lg bg-primary-container text-on-primary font-bold shadow-sm flex items-center gap-1.5" href="#section-d">
+<span class="material-symbols-outlined text-base" data-icon="calendar_month">calendar_month</span>
+<span class="">Tab 4: Day-wise Itinerary</span>
+</a>
+<a class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center gap-1.5" href="#section-e">
+<span class="material-symbols-outlined text-base" data-icon="checklist">checklist</span>
+<span class="">Tab 5: Inclusions &amp; Exclusions</span>
+</a>
+<a class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center gap-1.5" href="#section-f">
+<span class="material-symbols-outlined text-base" data-icon="hotel">hotel</span>
+<span class="">Tab 6: Hotel &amp; Transport</span>
+</a>
+<a class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center gap-1.5" href="#section-g">
+<span class="material-symbols-outlined text-base" data-icon="contact_support">contact_support</span>
+<span class="">Tab 7: CTAs &amp; SEO</span>
+</a>
+</nav>
+</div>
+</section>
+<!-- SECTION A: BASIC INFO & DURATION -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-5" id="section-a">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section A: Basic Info &amp; Duration</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Metadata &amp; Route</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<div class="md:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="package-title">Package Title *</label>
+<input class="rounded-lg border border-outline-variant/50 px-3.5 py-2.5 bg-surface text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md text-body-md shadow-inner" id="package-title" type="text" value="Uttarakhand Weekend Escape">
+<span class="text-xs text-outline font-mono">Slug: /packages/uttarakhand-weekend-escape (auto-generated)</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="package-category">Category *</label>
+<select class="rounded-lg border border-outline-variant/50 px-3.5 py-2.5 bg-surface text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md text-body-md shadow-inner" id="package-category">
+<option selected="">Weekend Escape</option>
+<option>Family</option>
+<option>Honeymoon</option>
+<option>Spiritual Circuit</option>
+<option>Adventure Expedition</option>
+<option>Customized Tailored Tour</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Duration Configuration *</label>
+<div class="grid grid-cols-2 gap-2">
+<div class="flex items-center bg-surface border border-outline-variant/50 rounded-lg px-3 py-2">
+<input class="w-full bg-transparent border-none p-0 text-on-surface font-bold focus:ring-0" type="number" value="3">
+<span class="text-outline text-xs ml-1">Nights</span>
+</div>
+<div class="flex items-center bg-surface border border-outline-variant/50 rounded-lg px-3 py-2">
+<input class="w-full bg-transparent border-none p-0 text-on-surface font-bold focus:ring-0" type="number" value="4">
+<span class="text-outline text-xs ml-1">Days</span>
+</div>
+</div>
+<span class="text-xs text-secondary font-semibold">Auto-formatted as: 3 Nights / 4 Days</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="destination-select">Destination Region *</label>
+<select class="rounded-lg border border-outline-variant/50 px-3.5 py-2.5 bg-surface text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md text-body-md shadow-inner" id="destination-select">
+<option selected="">Uttarakhand (Rishikesh &amp; Haridwar)</option>
+<option>Himachal Pradesh (Manali &amp; Shimla)</option>
+<option>Uttar Pradesh (Varanasi &amp; Ayodhya)</option>
+<option>Rajasthan (Jaipur &amp; Udaipur)</option>
+<option>Kerala (Munnar &amp; Alleppey)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="pickup-location">Starting Hub / Pick-up</label>
+<input class="rounded-lg border border-outline-variant/50 px-3.5 py-2.5 bg-surface text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md text-body-md shadow-inner" id="pickup-location" type="text" value="New Delhi (DEL Airport / Rly Stn)">
+</div>
+</div>
+<!-- Featured Tour & Badges Controls -->
+<div class="pt-3 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-6">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="rounded border-outline-variant/50 text-primary focus:ring-primary w-4 h-4" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface font-medium">Mark as Featured Tour on Homepage</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="rounded border-outline-variant/50 text-secondary focus:ring-secondary w-4 h-4" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface font-medium">Enable Seasonal Tag</span>
+</label>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-outline">Seasonal Badge:</span>
+<span class="px-2 py-0.5 rounded text-xs bg-tertiary-fixed text-on-tertiary-fixed font-bold">Best in Autumn / Spring</span>
+</div>
+</div>
+</section>
+<!-- SECTION B: PRICING CONFIGURATION & DISCOUNTS -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-5" id="section-b">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="currency_rupee">currency_rupee</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section B: Pricing Configuration &amp; Discounts</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Rates &amp; Tags</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="starting-price">Starting Price (Per Person) *</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-on-surface font-semibold">₹</span>
+<input class="w-full pl-8 pr-3.5 py-2.5 rounded-lg border border-outline-variant/50 bg-surface text-on-surface font-bold focus:outline-none focus:ring-2 focus:ring-primary" id="starting-price" type="text" value="8,999">
+</div>
+<span class="text-[11px] text-secondary font-medium">Net starting base rate</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="original-price">Original Price (Strikethrough)</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-outline">₹</span>
+<input class="w-full pl-8 pr-3.5 py-2.5 rounded-lg border border-outline-variant/50 bg-surface text-on-surface font-medium focus:outline-none focus:ring-2 focus:ring-primary" id="original-price" type="text" value="11,999">
+</div>
+<span class="text-[11px] text-outline font-medium">Automatic 25.0% strike-off computation</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="discount-badge">Discount Tag / Badge</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant/50 bg-surface text-on-surface font-medium focus:outline-none focus:ring-2 focus:ring-primary" id="discount-badge" type="text" value="25% OFF / Early Bird">
+<span class="text-[11px] text-outline">Displayed on search &amp; package cards</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="currency-select">Currency Standard &amp; Pricing Type</label>
+<select class="rounded-lg border border-outline-variant/50 px-3.5 py-2.5 bg-surface text-on-surface font-medium focus:outline-none focus:ring-2 focus:ring-primary" id="currency-select">
+<option selected="">INR (₹) - Per Person (Twin Sharing)</option>
+<option>INR (₹) - Total Group Price</option>
+<option>USD ($) - Per Person</option>
+<option>EUR (€) - Per Person</option>
+</select>
+<span class="text-[11px] text-outline">Calculated per guest</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-4">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="rounded border-outline-variant/50 text-primary focus:ring-primary w-4 h-4" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface">Enable price disclaimer ("*Prices may vary during Diwali &amp; New Year rush")</span>
+</label>
+<div class="inline-flex items-center gap-1.5 text-xs text-secondary font-semibold bg-secondary-container/40 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+            Effective Margin: +18.5% with private fleet allocation
+          </div>
+</div>
+</section>
+<!-- SECTION C: MEDIA UPLOADER & GALLERY ASSETS -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-5" id="section-c">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="image">image</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section C: Media Uploader &amp; Gallery Assets</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Visual Assets</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Main Hero Image slot -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Primary Hero Banner (16:9)</span>
+<div class="relative rounded-xl overflow-hidden border-2 border-dashed border-primary/40 bg-surface p-2 flex flex-col group">
+<img class="w-full h-44 object-cover rounded-lg" data-alt="A sweeping scenic landscape of Rishikesh with emerald river Ganges flowing between misty Himalayan foothills under the golden dawn light. Warm sunlight glints off suspension bridges with vibrant prayer flags and ancient stone ashram ghats in the distance, capturing an elegant luxury travel atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAA4LVJdcmS0Y5HuBy-27VqgJ2wXuAsdUtSFapMH65LNWqyDxFPHn9HHWR8DO1n85_gRyFrBymn9B9zCZxD-ctRHM6ftKj_Hl-oRPn2nujb-GXkWKVcxGMBbmYX20oQdEmiU2hfKDr5Z5YPqm4fTnh1gdkdz27VzGFeVgkSHyzCsE9ju00Qbnh347tfwmnIF5puuMT-tvvFABUenHyqmP3515ZffVH4OHS3hcAz-8">
+<div class="absolute inset-0 bg-on-surface/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 rounded-xl">
+<button class="p-2 rounded-full bg-surface text-on-surface shadow-md hover:bg-surface-container" title="Change Image" type="button">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 rounded-full bg-error-container text-on-error-container shadow-md" title="Delete Image" type="button">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<div class="mt-2 flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-secondary font-bold">HERO ACTIVE</span>
+<span class="text-xs text-outline">1920 x 1080 px</span>
+</div>
+</div>
+</div>
+<!-- Gallery thumbnails with drag & drop indicator -->
+<div class="md:col-span-2 flex flex-col gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Gallery Thumbnails (Drag to Reorder)</span>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<div class="relative rounded-lg overflow-hidden border border-outline-variant/40 bg-surface p-1 group">
+<img class="w-full h-24 object-cover rounded" data-alt="Evening Ganga Aarti ceremony at Parmarth Niketan in Rishikesh featuring grand brass fire lamps glowing brightly against the twilight river, temple priests in saffron robes, and tranquil devotees sitting along warm marble ghat steps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ZhJhbSm90G_jtdnfKzB44IUUqhZ0ji2EmMt7Dk-Yp_17adhgAe34i9tzGxahaxWyfy4ZOFvFWLqIxwOdPY4jgr438x_GfrsOn93qOvpJukJQd6As3lz2XNSbD3bwODzvTdewvdtmndackbFNDvq0wedIAoZbs6ZnCn3mkqfIuwDIK4ei15V4y5htOsAcQyh-E_03xU4gP2c-bQJQM5eVrIL1o73Xp0CCCufClbM">
+<div class="absolute top-2 left-2 bg-on-surface/70 text-surface p-0.5 rounded cursor-grab">
+<span class="material-symbols-outlined text-xs" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="p-1 text-center font-label-sm text-label-sm text-on-surface truncate">Parmarth Aarti</div>
+</div>
+<div class="relative rounded-lg border border-outline-variant/40 bg-surface p-1 group">
+<img class="w-full h-24 object-cover rounded" data-alt="A thrilling whitewater rafting adventure in the sparkling turquoise waters of river Ganges near Shivpuri, with life-jacket clad explorers smiling against lush canyon walls under radiant sunbeams." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC31hkDBVaqaWtLu8173_SELB7q7xR62AzaPG4l9IES4yDggJEZW4q4VkfOG86HHdLh9o8WQy9IHU8io2t3PweHasw94FFf9jOhR17u3jjBYNIzpt7YqvPsE3g5FErMEBqhJ7BjjBsH33rHXO4JMKKQLC_RwlEP6jUQwk1LNdBW64G5N9Ph2ETgdo_G90P22OwkTVcR_9kMKMF4S-aLQfvJXcAU7PSLnY0Bshoj2aA">
+<div class="absolute top-2 left-2 bg-on-surface/70 text-surface p-0.5 rounded cursor-grab">
+<span class="material-symbols-outlined text-xs" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="p-1 text-center font-label-sm text-label-sm text-on-surface truncate">Shivpuri Rafting</div>
+</div>
+<div class="relative rounded-lg border border-outline-variant/40 bg-surface p-1 group">
+<img class="w-full h-24 object-cover rounded" data-alt="Historic Har Ki Pauri ghat in Haridwar viewed from a scenic ropeway cable car overlooking ancient Hindu temple spires, sacred bridges, and colorful bustling riverside bazaars in warm golden evening light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP8NNeJRCH6e-uTB9VCXxbEsfHG9ij_SIbbSiO6jLblowcgjkF2uQylsaM4gZPczZf-WTEQ7EYfdOVrADUleu27QxGWjibM_356r3wWhTEicRpBPxPpfd74iTcEzDaIAZGjaZH4smRIJORPxGpiBKbN28uaBMbtrC-hmQTCJUe-XOuxeh_fjjBXnXOn2h5B84tBiAwfApLY1R6XKuoI8EXn-zAwiiFu_UaqI43Vdo">
+<div class="absolute top-2 left-2 bg-on-surface/70 text-surface p-0.5 rounded cursor-grab">
+<span class="material-symbols-outlined text-xs" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="p-1 text-center font-label-sm text-label-sm text-on-surface truncate">Har Ki Pauri Ropeway</div>
+</div>
+<div class="relative rounded-lg border border-outline-variant/40 bg-surface p-1 group">
+<img class="w-full h-24 object-cover rounded" data-alt="Peaceful boutique heritage riverside resort in Rishikesh with teak wood sundecks, pristine infinity pool overlooking river Ganges, lush green gardens, and ambient brass lanterns glowing at dusk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCJMeGaTbAk6hiykD5w9kWKQY1SHVCJZtpOb0MLkJjsLMW3tmWfRd13CDmOntpOwndNx-Rf3-1qoVXOZ8Fb39TKpa4ePxr20B03iwu3K9X773h3GeU9pRmk1cjluGu4lZ1Y4P1MAn-w1Td9GWqPL7xEvLPJww5O6vQo5ErYBdfVRHoVN3BDCsfX2dsonsBxw40K2RGGS8EKPfTCl1yycmjIrV3_6F5cWTaXYgFZpo">
+<div class="absolute top-2 left-2 bg-on-surface/70 text-surface p-0.5 rounded cursor-grab">
+<span class="material-symbols-outlined text-xs" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="p-1 text-center font-label-sm text-label-sm text-on-surface truncate">Riverside Resort Stay</div>
+</div>
+<!-- Upload New Image slot -->
+<div class="rounded-lg border-2 border-dashed border-outline-variant hover:border-primary/60 bg-surface flex flex-col items-center justify-center p-4 cursor-pointer hover:bg-surface-container transition-colors h-28">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="add_photo_alternate">add_photo_alternate</span>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-1 text-center">+ Upload New Image</span>
+<span class="text-[10px] text-outline">JPG, PNG up to 5MB</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION D: INTERACTIVE DAY-WISE ITINERARY BUILDER -->
+<section class="bg-surface-container-lowest rounded-xl border-2 border-primary/30 p-6 shadow-sm flex flex-col gap-6 ring-2 ring-primary-container/10" id="section-d">
+<div class="flex flex-wrap items-center justify-between pb-3 border-b border-outline-variant/20 gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="route">route</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section D: Interactive Day-wise Itinerary Builder</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage daily route stops, curated activity itineraries, hotel check-ins, and meal plans.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-tertiary-fixed text-on-tertiary-fixed">4 Days Configured</span>
+<button class="text-primary hover:underline font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-base" data-icon="unfold_more">unfold_more</span>
+              Expand All
+            </button>
+</div>
+</div>
+<!-- Timeline container -->
+<div class="relative flex flex-col gap-5 pl-2 sm:pl-4">
+<!-- Continuous sand-gold connecting spine -->
+<div class="absolute left-6 sm:left-8 top-6 bottom-6 w-0.5 bg-outline-variant/40 -z-0"></div>
+<!-- DAY 1 -->
+<div class="relative z-10 bg-surface rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40 flex flex-col gap-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shadow-sm ring-4 ring-surface">01</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Day 1: Delhi → Haridwar → Rishikesh</h3>
+<span class="font-body-sm text-body-sm text-outline">Arrival transfer • Sacred riverbank welcome</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-xs rounded border border-outline-variant/50 hover:bg-surface-container text-on-surface font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="drag_handle">drag_handle</span>
+                  Reorder
+                </button>
+<button class="px-2.5 py-1 text-xs rounded bg-surface-container text-primary hover:bg-primary hover:text-on-primary font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+                  Edit
+                </button>
+</div>
+</div>
+<!-- Day 1 Details Content -->
+<div class="bg-surface-container-lowest rounded-lg p-3.5 border border-outline-variant/20 flex flex-col gap-2.5 ml-1 sm:ml-11">
+<p class="font-body-md text-body-md text-on-surface">
+                Morning departure from Delhi NCR in a sanitized private sedan. Scenic transition through sugarcane plains into sacred Haridwar. Short scenic halt at Har Ki Pauri for holy dip &amp; afternoon arrival check-in at luxury riverside resort in Rishikesh. Evening witness the mystical world-renowned Ganga Aarti at Parmarth Niketan Ashram.
+              </p>
+<div class="flex flex-wrap items-center gap-3 pt-2 border-t border-outline-variant/20 font-label-md text-label-md">
+<span class="inline-flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-base" data-icon="hotel">hotel</span>
+<strong>Hotel:</strong> Riverfront Resort (Rishikesh)
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-base" data-icon="restaurant">restaurant</span>
+<strong>Meals:</strong> Dinner included
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="directions_car">directions_car</span>
+                  Private Sedan AC Transfer (240 km)
+                </span>
+</div>
+</div>
+</div>
+<!-- DAY 2 -->
+<div class="relative z-10 bg-surface rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40 flex flex-col gap-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shadow-sm ring-4 ring-surface">02</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Day 2: Rishikesh Adventure &amp; Spiritual Tour</h3>
+<span class="font-body-sm text-body-sm text-outline">Grade III Whitewater rapids • Heritage ashram walk</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-xs rounded border border-outline-variant/50 hover:bg-surface-container text-on-surface font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="drag_handle">drag_handle</span>
+                  Reorder
+                </button>
+<button class="px-2.5 py-1 text-xs rounded bg-surface-container text-primary hover:bg-primary hover:text-on-primary font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+                  Edit
+                </button>
+</div>
+</div>
+<!-- Day 2 Details Content -->
+<div class="bg-surface-container-lowest rounded-lg p-3.5 border border-outline-variant/20 flex flex-col gap-2.5 ml-1 sm:ml-11">
+<p class="font-body-md text-body-md text-on-surface">
+                Post hearty breakfast, embark on an exhilarating 12 km River Rafting trip from Marine Drive to Shivpuri under certified guide supervision. Afternoon visit to iconic Lakshman Jhula suspension walkway, Ram Jhula, and the historic graffiti meditation domes at Beatles Ashram (Chaurasi Kutia). Sunset leisure by Tapovan artisan cafes.
+              </p>
+<div class="flex flex-wrap items-center gap-3 pt-2 border-t border-outline-variant/20 font-label-md text-label-md">
+<span class="inline-flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-base" data-icon="hotel">hotel</span>
+<strong>Hotel:</strong> Riverfront Resort (Rishikesh)
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-base" data-icon="restaurant">restaurant</span>
+<strong>Meals:</strong> Breakfast &amp; Dinner
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-base" data-icon="kayaking">kayaking</span>
+                  Certified Rafting Equipment Included
+                </span>
+</div>
+</div>
+</div>
+<!-- DAY 3 -->
+<div class="relative z-10 bg-surface rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40 flex flex-col gap-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shadow-sm ring-4 ring-surface">03</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Day 3: Haridwar Temple Circuit &amp; Sunset Ghats</h3>
+<span class="font-body-sm text-body-sm text-outline">Hilltop shrines • Vedic heritage walking trail</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-xs rounded border border-outline-variant/50 hover:bg-surface-container text-on-surface font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="drag_handle">drag_handle</span>
+                  Reorder
+                </button>
+<button class="px-2.5 py-1 text-xs rounded bg-surface-container text-primary hover:bg-primary hover:text-on-primary font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+                  Edit
+                </button>
+</div>
+</div>
+<!-- Day 3 Details Content -->
+<div class="bg-surface-container-lowest rounded-lg p-3.5 border border-outline-variant/20 flex flex-col gap-2.5 ml-1 sm:ml-11">
+<p class="font-body-md text-body-md text-on-surface">
+                Morning road excursion to Haridwar. Ascend Bilwa Parvat via the scenic Mansa Devi Udankhatola ropeway. Explore the bustling Moti Bazaar spice &amp; handicraft lanes, followed by afternoon peaceful moments at Daksh Prajapati Temple in Kankhal. Evening free time for sacred photography.
+              </p>
+<div class="flex flex-wrap items-center gap-3 pt-2 border-t border-outline-variant/20 font-label-md text-label-md">
+<span class="inline-flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-base" data-icon="hotel">hotel</span>
+<strong>Hotel:</strong> Riverfront Resort (Rishikesh)
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-base" data-icon="restaurant">restaurant</span>
+<strong>Meals:</strong> Breakfast
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="cable">cable</span>
+                  Mansa Devi Ropeway Tickets Reserved
+                </span>
+</div>
+</div>
+</div>
+<!-- DAY 4 -->
+<div class="relative z-10 bg-surface rounded-xl border border-outline-variant/30 p-5 shadow-sm transition-all hover:border-primary/40 flex flex-col gap-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shadow-sm ring-4 ring-surface">04</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Day 4: Return Journey to Delhi</h3>
+<span class="font-body-sm text-body-sm text-outline">Farewell breakfast • Departure transfer</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-xs rounded border border-outline-variant/50 hover:bg-surface-container text-on-surface font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="drag_handle">drag_handle</span>
+                  Reorder
+                </button>
+<button class="px-2.5 py-1 text-xs rounded bg-surface-container text-primary hover:bg-primary hover:text-on-primary font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+                  Edit
+                </button>
+</div>
+</div>
+<!-- Day 4 Details Content -->
+<div class="bg-surface-container-lowest rounded-lg p-3.5 border border-outline-variant/20 flex flex-col gap-2.5 ml-1 sm:ml-11">
+<p class="font-body-md text-body-md text-on-surface">
+                Check-out after morning buffet breakfast. Scenic road trip back to New Delhi via Meerut Expressway with curated restaurant stops for lunch. Drop-off at New Delhi Railway Station / IGI Airport marking memorable closure to your Himalayan weekend getaway.
+              </p>
+<div class="flex flex-wrap items-center gap-3 pt-2 border-t border-outline-variant/20 font-label-md text-label-md">
+<span class="inline-flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-base" data-icon="logout">logout</span>
+                  Check-out: 11:00 AM
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-base" data-icon="restaurant">restaurant</span>
+<strong>Meals:</strong> Breakfast included
+                </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="flight_takeoff">flight_takeoff</span>
+                  Delhi Drop-off approx. 06:00 PM
+                </span>
+</div>
+</div>
+</div>
+<!-- Add Another Day Button -->
+<div class="ml-1 sm:ml-11">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border-2 border-dashed border-primary text-primary hover:bg-primary-fixed/30 font-label-md text-label-md font-bold transition-all" type="button">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="">+ Add Another Day</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION E: INCLUSIONS & EXCLUSIONS CHECKLIST -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-5" id="section-e">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="fact_check">fact_check</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section E: Inclusions &amp; Exclusions Checklist</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Checklist Badges</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Inclusions Column -->
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md font-bold text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="check_circle">check_circle</span>
+              Confirmed Inclusions
+            </span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-xs" data-icon="directions_car">directions_car</span>
+                AC Private Cab
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-xs" data-icon="hotel">hotel</span>
+                3-Star Hotels
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-xs" data-icon="free_breakfast">free_breakfast</span>
+                Daily Breakfast
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-xs" data-icon="tour">tour</span>
+                Guided Sightseeing
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-xs" data-icon="kayaking">kayaking</span>
+                River Rafting Pass
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-xs" data-icon="toll">toll</span>
+                Toll &amp; Driver Allowance
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium border border-dashed border-secondary text-secondary hover:bg-secondary-container/30" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="add">add</span>
+                Add Inclusion
+              </button>
+</div>
+</div>
+<!-- Exclusions Column -->
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md font-bold text-error flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="cancel">cancel</span>
+              Standard Exclusions
+            </span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-xs" data-icon="shopping_bag">shopping_bag</span>
+                Personal Expenses
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-xs" data-icon="confirmation_number">confirmation_number</span>
+                Entry Tickets &amp; Monument Pass
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-xs" data-icon="liquor">liquor</span>
+                Alcoholic Beverages
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-xs" data-icon="lunch_dining">lunch_dining</span>
+                Lunch &amp; Extra Meals
+                <button class="ml-1 hover:text-error" type="button">×</button>
+</span>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium border border-dashed border-error text-error hover:bg-error-container/30" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="add">add</span>
+                Add Exclusion
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION F: HOTELS & TRANSPORTATION ASSIGNMENT -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-5" id="section-f">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="hotel_class">hotel_class</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section F: Hotels &amp; Transportation Assignment</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Partner Logistics</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Assigned Hotel Card -->
+<div class="bg-surface rounded-xl border border-outline-variant/30 p-4.5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="hotel">hotel</span>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface">Assigned Stay Partner</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-secondary-container text-on-secondary-fixed-variant">3-Star Deluxe</span>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/20">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="apartment">apartment</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Riverfront Resort &amp; Spa</span>
+<span class="text-xs text-on-surface-variant">Tapovan, Rishikesh • Heritage River Facing Rooms</span>
+<div class="flex items-center gap-3 mt-1.5 text-xs text-secondary font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="wifi">wifi</span> Free WiFi</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="pool">pool</span> Pool</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" data-icon="restaurant">restaurant</span> Multi-Cuisine</span>
+</div>
+</div>
+</div>
+<button class="w-full py-1.5 text-xs rounded border border-outline-variant hover:bg-surface-container text-on-surface font-medium transition-colors" type="button">
+              Change Assigned Hotel Partner
+            </button>
+</div>
+<!-- Assigned Vehicle Fleet -->
+<div class="bg-surface rounded-xl border border-outline-variant/30 p-4.5 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="directions_car">directions_car</span>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface">Assigned Fleet &amp; Logistics</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container text-primary font-semibold">Dedicated Driver</span>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/20">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/30 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-2xl" data-icon="local_taxi">local_taxi</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Private AC Sedan (Dzire / Etios)</span>
+<span class="text-xs text-on-surface-variant">4 Passenger Seating • Commercial All-India Tourist Permit</span>
+<div class="flex items-center gap-3 mt-1.5 text-xs text-on-surface font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span> Sanitized</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs text-secondary" data-icon="toll">toll</span> All Tolls Covered</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs text-secondary" data-icon="badge">badge</span> Verified Chauffeur</span>
+</div>
+</div>
+</div>
+<button class="w-full py-1.5 text-xs rounded border border-outline-variant hover:bg-surface-container text-on-surface font-medium transition-colors" type="button">
+              Upgrade Fleet Option (SUV / Innova)
+            </button>
+</div>
+</div>
+</section>
+<!-- SECTION G: BOOKING & LEAD CONVERSION CTAS -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-5" id="section-g">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="contact_support">contact_support</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section G: Booking &amp; Lead Conversion CTAs</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Direct Engagement</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Toggle 1: Get a Quote -->
+<div class="bg-surface rounded-xl border border-outline-variant/30 p-4 flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="request_quote">request_quote</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">"Get a Quote" Form</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Displays instant popup booking quote form on package page.</p>
+</div>
+<!-- Toggle 2: WhatsApp Us -->
+<div class="bg-surface rounded-xl border border-outline-variant/30 p-4 flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="chat">chat</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">"WhatsApp Us"</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="flex items-center gap-2 font-mono text-xs bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/20">
+<span class="text-outline">Direct Link:</span>
+<span class="text-secondary font-semibold">+91 7417647288</span>
+</div>
+</div>
+<!-- Toggle 3: Call Now -->
+<div class="bg-surface rounded-xl border border-outline-variant/30 p-4 flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">"Call Now" Hotline</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center gap-2 font-mono text-xs bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/20">
+<span class="text-outline">Direct Line:</span>
+<span class="text-primary font-semibold">+91 7417647288</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION H: SEO SETTINGS & SEARCH SNIPPET PREVIEW -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 shadow-sm flex flex-col gap-5" id="section-preview">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="manage_search">manage_search</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Section H: SEO Settings &amp; Live Search Preview</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Search Engine Optimization</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- SEO Form Inputs -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="meta-title">Meta Title (Max 60 chars)</label>
+<input class="rounded-lg border border-outline-variant/50 px-3.5 py-2.5 bg-surface text-on-surface font-body-md text-body-md" id="meta-title" type="text" value="Uttarakhand Weekend Escape | 3N/4D Rishikesh &amp; Haridwar Tour">
+<div class="flex justify-between text-xs text-outline px-1">
+<span class="">Optimal length: 50-60 characters</span>
+<span class="text-secondary font-medium">58 / 60</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="meta-desc">Meta Description (Max 160 chars)</label>
+<textarea class="rounded-lg border border-outline-variant/50 px-3.5 py-2.5 bg-surface text-on-surface font-body-md text-body-md" id="meta-desc" rows="3">Book the 4-Day Uttarakhand Weekend Escape by TravoBharat. Experience Ganga Aarti in Rishikesh, river rafting adventure, Haridwar temples, 3-star stays &amp; private cab starting at ₹8,999.</textarea>
+<div class="flex justify-between text-xs text-outline px-1">
+<span class="">Engaging conversion snippet</span>
+<span class="text-secondary font-medium">156 / 160</span>
+</div>
+</div>
+</div>
+<!-- Google Snippet Simulation Card -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Live Google Snippet Preview</span>
+<div class="bg-surface rounded-xl border border-outline-variant/30 p-4.5 shadow-sm flex flex-col gap-1.5 font-sans">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="language">language</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-on-surface font-medium leading-none">TravoBharat</span>
+<span class="text-[11px] text-outline leading-tight">https://travobharat.com &gt; packages &gt; uttarakhand-weekend-escape</span>
+</div>
+</div>
+<h4 class="text-primary hover:underline font-medium text-lg leading-snug cursor-pointer pt-1">
+                Uttarakhand Weekend Escape | 3N/4D Rishikesh &amp; Haridwar Tour
+              </h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<span class="text-outline">Oct 24, 2026 — </span>Book the 4-Day Uttarakhand Weekend Escape by TravoBharat. Experience Ganga Aarti in Rishikesh, river rafting adventure, Haridwar temples, 3-star stays &amp; private cab starting at ₹8,999.
+              </p>
+<div class="mt-2 pt-2 border-t border-outline-variant/20 flex items-center gap-4 text-xs text-outline">
+<span class="flex items-center gap-1 text-tertiary font-bold">
+                  ★ 4.9 (128 reviews)
+                </span>
+<span class="">• Price: ₹8,999</span>
+<span class="">• In stock</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Sticky Action Bar -->
+<div class="sticky bottom-4 z-30 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl border border-outline-variant/40 p-4 shadow-lg flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-body-md text-body-md text-on-surface">Auto-saved 14 seconds ago to cloud draft</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">
+            Discard Unsaved
+          </button>
+<button class="px-5 py-2 rounded-lg bg-surface-container-lowest border border-secondary text-secondary hover:bg-surface-container font-label-md text-label-md font-semibold transition-all shadow-sm" type="button">
+            Save Draft
+          </button>
+<button class="px-6 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-bold transition-all shadow-md active:scale-95 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="publish">publish</span>
+            Save &amp; Publish Package
+          </button>
+</div>
+</div>
+</main>
+</div>
+<!-- Multi-column Footer as dictated by Shared Components -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant/30 mt-12 transition-colors">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<img alt="TravoBharat Logo" class="h-12 w-auto object-contain max-h-14" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3N3nLp3StBvUbfY-pMxuC8NfQ743f5CxKVMGfgp1goTlfff6tOq1bHogjEoZxKPbCDBd88xOlN563foR2u0DbVBGxzTFhSWx0rXcpk98W7RPJAh4TLoCm2wcxviTyKCkJXut1a8vxUqsWgN0XD6JapWWhTUhou970YMfBdyen9xpZ4t2m3pCTNJ4rKYF5ES-VWfGUPcQf-gUnNDBrIaGtKxP5-qrzP8EQbiMbazpohV2K9C1LWeqA">
+<span class="text-headline-md font-headline-md font-bold text-primary">TravoBharat</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            Pioneering authentic heritage voyages, royal palace circuits, and spiritual journeys across India with unmatched hospitality.
+          </p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-primary mb-2">Destinations</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Uttarakhand</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Himachal Pradesh</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Uttar Pradesh</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Rajasthan</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-primary mb-2">Company</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Destinations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-primary mb-2">Legal &amp; Policy</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Terms &amp; Conditions</a>
+<div class="mt-4 pt-2 border-t border-outline-variant/30 flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="phone_in_talk">phone_in_talk</span>
+<span class="">Support: +91 7417647288</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-on-surface-variant gap-4">
+<span class="">© 2020 TravoBharat. All rights reserved.</span>
+<span class="">Crafted for curated journeys across Bharat.</span>
+</div>
+</div>
+</footer>
+</body></html>

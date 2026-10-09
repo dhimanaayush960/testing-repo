@@ -1,0 +1,682 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Us | TravoBharat - Curated Voyages Across Incredible India</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#1a5f7a",
+            "secondary-container": "#86f2e4",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#001e2b",
+            "surface-container": "#eaedff",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#6bd8cb",
+            "inverse-primary": "#92cfee",
+            "tertiary-fixed": "#ffdf98",
+            "on-tertiary-container": "#f7c952",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#251a00",
+            "inverse-on-surface": "#eef0ff",
+            "surface-variant": "#dae2fd",
+            "surface-tint": "#236580",
+            "surface-container-high": "#e2e7ff",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#5a4300",
+            "surface-dim": "#d2d9f4",
+            "outline-variant": "#c0c8cd",
+            "surface-container-low": "#f2f3ff",
+            "on-surface-variant": "#40484d",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#89f5e7",
+            "on-secondary-container": "#006f66",
+            "on-surface": "#131b2e",
+            "surface": "#faf8ff",
+            "tertiary": "#523e00",
+            "on-primary-fixed-variant": "#004d66",
+            "secondary": "#006a61",
+            "primary": "#00475e",
+            "primary-fixed-dim": "#92cfee",
+            "primary-fixed": "#c0e8ff",
+            "on-secondary-fixed": "#00201d",
+            "on-secondary-fixed-variant": "#005049",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#6f5400",
+            "tertiary-fixed-dim": "#eec14b",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#9bd7f7",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "background": "#faf8ff",
+            "outline": "#70787d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed font-body-md text-body-md">
+<!-- =========================================================================
+       1. TOP APP BAR / HEADER (Shared Component Execution)
+       ========================================================================= -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Logo Branding with image placeholder -->
+<a class="flex items-center gap-3 active:scale-95 transition-transform duration-150" href="#">
+<img alt="TravoBharat Logo" class="h-12 w-auto object-contain max-h-14" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIQrq6p0bRlBZcVa42QXEiA4X8TvAuK6iqpZg25rXIjoDNmSnCVrkCR5RmrmY3fDf5HL4zrd8DF0rf8MXSQimYdj_mZ2uUVNF3fKE-Ya03UZCgICCHYBIZBp9E-xPI34J8Qz-N7HtcB9Yb44rmZgH7wsgROZ02sXsicRMCO9ans4NRuFSQWy-5I9_2h1BvsEGwzxO4dAiUnDfmyCYIgnknbHzrf007QEwd35wboCzhDTyXnJrPfXwc">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">TravoBharat<br></span>
+</a>
+<!-- Desktop Navigation Links (Intent Active: "About Us") -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-lg font-label-lg active:scale-95 transition-transform duration-150" href="/stitch_travobharat_travel_portal/travobharat_home/code.html">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-lg font-label-lg active:scale-95 transition-transform duration-150" href="/stitch_travobharat_travel_portal/travobharat_destinations/code.html">Destinations</a>
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-lg font-label-lg active:scale-95 transition-transform duration-150" href="/stitch_travobharat_travel_portal/travobharat_about_us/code.html">About Us</a><a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-lg font-label-lg active:scale-95 transition-transform duration-150" href="/stitch_travobharat_travel_portal/travobharat_travel_stories_tips_inspiration/code.html">Blog</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-lg font-label-lg active:scale-95 transition-transform duration-150" href="/stitch_travobharat_travel_portal/travobharat_contact_us/code.html">Contact Us</a>
+</nav>
+<!-- Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Call Now Action -->
+<a class="hidden sm:inline-flex items-center gap-2 px-4 py-2 border border-secondary text-secondary rounded hover:bg-secondary hover:text-on-secondary text-label-md font-label-md transition-colors active:scale-95 transition-transform duration-150" href="tel:+917417647288">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span class="">Call Now</span>
+</a>
+<!-- WhatsApp Primary CTA -->
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded hover:bg-primary-container text-label-md font-label-md shadow-sm transition-all active:scale-95 transition-transform duration-150" href="https://wa.me/917417647288" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="">WhatsApp</span>
+</a>
+<!-- Mobile Menu Trigger -->
+<button aria-label="Open Navigation Menu" class="md:hidden p-2 text-on-surface-variant hover:text-primary active:scale-95 transition-transform duration-150" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer Menu Dropdown -->
+<div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-6 py-5 space-y-4 shadow-lg" id="mobile-drawer">
+<div class="flex flex-col space-y-3">
+<a class="text-on-surface-variant font-medium py-1 text-body-md font-body-md" href="/stitch_travobharat_travel_portal/travobharat_home/code.html">Home</a>
+<a class="text-on-surface-variant font-medium py-1 text-body-md font-body-md" href="/stitch_travobharat_travel_portal/travobharat_destinations/code.html">Destinations</a>
+<a class="text-primary font-bold py-1 border-l-2 border-primary pl-2 text-body-md font-body-md" href="/stitch_travobharat_travel_portal/travobharat_about_us/code.html">About Us</a><a class="text-on-surface-variant font-medium py-1 text-body-md font-body-md" href="#">Blog</a>
+<a class="text-on-surface-variant font-medium py-1 text-body-md font-body-md" href="/stitch_travobharat_travel_portal/travobharat_travel_stories_tips_inspiration/code.html">Contact Us</a>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-2">
+<a class="w-full flex items-center justify-center gap-2 py-2 border border-secondary text-secondary rounded text-label-md font-label-md" href="tel:+917417647288">
+<span class="material-symbols-outlined text-base">call</span>
+<span class="">Call: +91 7417647288</span>
+</a>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- =========================================================================
+         2. HERO SECTION: Grand Scenic Indian Landscape & Core Philosophy
+         ========================================================================= -->
+<section class="relative min-h-[580px] lg:min-h-[640px] flex items-center justify-center overflow-hidden">
+<!-- Background Scenic Image with Gradient Overlays -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center" data-alt="A breathtaking panoramic view of sunlit misty Himalayan valleys merging with ancient sandstone palace cupolas and peaceful Kerala backwaters at golden dawn. Soft warm morning light bathes terraced greenery in gold and serene azure mist. High dynamic range photography with warm ivory atmosphere, royal blue accents, and deep majestic contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaRG8dozIdgc1hS8NNWZINTE9JXwDrLtQVRdN2cNhwXKr_b7dcO7NsMxlH9dduKH7_8993NLrfxEkRw9Pt15qIb09IuDUknBiyj2pGN1k96FeXOKQPn7mdpLiQsa9tBHrC6q3eDAdZTBDk0A4TjV-N3VCEyMuhYezD4kjt8O5k54IvUaSUSgGlz9NnD_YTOgKxoHE9NBYy8RAqw0bHX7V49yEhQ3EQB7QEgORY-04">
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/85 via-on-background/70 to-primary/40 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center">
+<!-- Heritage Micro Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/30 border border-tertiary-fixed text-tertiary-fixed text-label-sm font-label-sm tracking-wider uppercase mb-6 backdrop-blur-md">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed" data-icon="travel_explore">travel_explore</span>
+<span class="">Curating Authentic Bharat</span>
+</div>
+<!-- Main Heading -->
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-surface tracking-tight max-w-4xl leading-tight">
+          Travel Made Simple. <span class="italic font-normal text-secondary-fixed">Memories Made Special.</span>
+</h1>
+<!-- Subheading -->
+<p class="mt-6 text-body-lg font-body-lg text-surface-container-high max-w-2xl text-center leading-relaxed">
+          TravoBharat is built to make discovering India easier, more comfortable and more memorable.
+        </p>
+<!-- Quick Trust Strip Highlights -->
+<div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-3xl">
+<div class="p-3.5 rounded-lg bg-surface/10 backdrop-blur-md border border-surface/20 text-surface text-center">
+<p class="text-headline-sm font-headline-sm text-tertiary-fixed font-bold">100%</p>
+<p class="text-body-sm font-body-sm text-surface-container">Customized Plans</p>
+</div>
+<div class="p-3.5 rounded-lg bg-surface/10 backdrop-blur-md border border-surface/20 text-surface text-center">
+<p class="text-headline-sm font-headline-sm text-secondary-fixed font-bold">24/7</p>
+<p class="text-body-sm font-body-sm text-surface-container">Dedicated Help</p>
+</div>
+<div class="p-3.5 rounded-lg bg-surface/10 backdrop-blur-md border border-surface/20 text-surface text-center">
+<p class="text-headline-sm font-headline-sm text-tertiary-fixed font-bold">28+</p>
+<p class="text-body-sm font-body-sm text-surface-container">Indian States</p>
+</div>
+<div class="p-3.5 rounded-lg bg-surface/10 backdrop-blur-md border border-surface/20 text-surface text-center">
+<p class="text-headline-sm font-headline-sm text-secondary-fixed font-bold">Best</p>
+<p class="text-body-sm font-body-sm text-surface-container">Price Guarantee</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         3. OUR STORY SECTION: Two-Column Editorial Narrative
+         ========================================================================= -->
+<section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Imagery Cluster: Bento Collage with Brand Anchors -->
+<div class="lg:col-span-6 relative">
+<div class="relative z-10 rounded-xl overflow-hidden shadow-lg border border-outline-variant/40 aspect-[4/3] bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="A pair of travelers observing the sunset silhouette over an elaborate Rajasthani courtyard pavilion with carved jali screens. The warm evening sky is painted in delicate shades of amber, ochre and royal indigo. Shot with cinematic warmth, portraying tranquility, premium travel discovery, and thoughtful itineraries." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJYHvVTLMNIGYFd6DeFh1hT6SzxoKpZoAsH7v3L0UiYM_yhrndLbkzNw29JDBMY0ELRTs6wXbvh07mHsUSTZ7WJiYpjHlWGeepIYwkri7NMt4UnKiQbknKmQNYfVe-50XaagHNrmwcWncosmAE9OsbbKl4xSQA3Au8hzPAWvuf75U2_VuLCS4fj5aII96ayy6RE6GAj6QeqWTkf6-WCfh9FJyqSDnIwP0vjK2b6Qo">
+</div>
+<!-- Secondary Overlapping Luxury Card -->
+<div class="absolute -bottom-8 -right-4 sm:-right-8 z-20 w-3/5 rounded-xl overflow-hidden shadow-xl border-2 border-surface-container-lowest bg-surface-container-lowest p-3 hidden sm:block">
+<div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-3">
+<img class="w-full h-full object-cover" data-alt="A traditional deluxe houseboat gliding gracefully across the calm emerald green waters of Kerala backwaters flanked by tall coconut palm trees. Soft daylight with warm highlights, capturing comfortable boutique relaxation, clean composition, and genuine Indian luxury travel experiences." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyCnVeHCIer4zb1uI-4izRzz5QCUVfS9iFUCcg4fxs3ElYIA__3JbE73k4fc71YUaDtRpNdOZ1sqvpD1_WyxiKjvaSWtclDTjS3xDLttXwIcom7rhT3y7-_FMTteVo91f4a5HmklsZTZcrM0zWcLZqE4SGnAlwyh3CeIv2KbV_z2D65eV0Cy-Hnd8MlHKSSQP-Y_v-URCF9G95mpuPesXTYjwxzea8S60NB_gtfC0">
+</div>
+<div class="flex items-center justify-between px-1">
+<div>
+<p class="text-label-md font-label-md text-primary font-bold">Incredible India</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">North to South Journeys</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Decorative Sandstone Motif Ring -->
+<div class="absolute -top-6 -left-6 w-32 h-32 rounded-full border border-tertiary/20 -z-0 pointer-events-none"></div>
+</div>
+<!-- Narrative Editorial Content -->
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-primary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span>
+<span class="">The TravoBharat Story</span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary tracking-tight">
+            About TravoBharat
+          </h2>
+<div class="w-16 h-1 bg-secondary rounded-full"></div>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+            TravoBharat is a travel company focused on creating thoughtfully planned holidays across India. We believe travel should be more than simply visiting a destination — it should be about experiences, comfort, discovery and unforgettable memories.
+          </p>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            From destination selection and hotel planning to sightseeing and transportation, we aim to make the travel planning process simple and convenient for our customers. Every route is crafted with care, combining authentic regional flavors, peaceful accommodation, and verified private transport.
+          </p>
+<!-- Core Value Bullet Points -->
+<div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-bold">Handcrafted Itineraries</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Tailored to your family pace</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="support_agent">support_agent</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-bold">Local Ground Help</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Real human assistance</p>
+</div>
+</div>
+</div>
+<!-- Direct Inquiries Hook -->
+<div class="pt-2 flex items-center gap-4">
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded text-label-lg font-label-lg hover:bg-primary-container shadow-sm transition-all active:scale-95 duration-150" href="https://wa.me/917417647288">
+<span class="">Chat with our Experts</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<span class="text-body-sm font-body-sm text-outline">or call directly at +91 7417647288</span>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         4. MISSION & VISION CARDS
+         ========================================================================= -->
+<section class="py-20 bg-surface-container-low/60 border-y border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Our Guiding Light</span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mt-2">
+            Committed to Indian Voyagers
+          </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+            Redefining travel architecture through transparent hospitality and seamless execution.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Mission Card -->
+<div class="relative bg-surface-container-lowest p-8 lg:p-10 rounded-xl border border-outline-variant/40 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed/40 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="flag">flag</span>
+</div>
+<div class="inline-block px-3 py-1 bg-surface-container rounded text-label-sm font-label-sm text-primary mb-3">
+              Purpose &amp; Dedication
+            </div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-4">Our Mission</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+              To make travel planning easier for Indian travelers by providing well-planned journeys, personalized assistance and memorable experiences at competitive prices.
+            </p>
+<div class="mt-8 pt-6 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-primary">
+<span class="font-semibold">Simplicity. Value. Delight.</span>
+<span class="material-symbols-outlined text-lg" data-icon="explore">explore</span>
+</div>
+</div>
+<!-- Vision Card -->
+<div class="relative bg-surface-container-lowest p-8 lg:p-10 rounded-xl border border-outline-variant/40 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 rounded-xl bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="visibility">visibility</span>
+</div>
+<div class="inline-block px-3 py-1 bg-secondary-container/30 rounded text-label-sm font-label-sm text-on-secondary-container mb-3">
+              Long-Term Promise
+            </div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-4">Our Vision</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+              To build a trusted Indian travel brand known for reliable service, thoughtfully designed holidays and exceptional customer experiences.
+            </p>
+<div class="mt-8 pt-6 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-secondary">
+<span class="font-semibold">Trust. Quality. National Pride.</span>
+<span class="material-symbols-outlined text-lg" data-icon="stars">stars</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         5. WHAT WE OFFER (6 Premium Service Bento Cards)
+         ========================================================================= -->
+<section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Curated Portfolios</span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mt-2">
+            What We Offer
+          </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2 max-w-xl">
+            From misty Himalayan heights to sacred heritage shrines, we design complete door-to-door holiday arrangements.
+          </p>
+</div>
+<div class="mt-4 md:mt-0">
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary text-label-lg font-label-lg transition-colors" href="https://wa.me/917417647288">
+<span class="">Enquire about specific packages</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1: Customized Tour Packages -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-8 hover:border-secondary transition-all duration-300 hover:shadow-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="tune">tune</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Customized Tour Packages
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Tailored itineraries created around your exact timeline, budget, and personal travel pace. No rigid schedules or rushed coach tours.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span class="">Flexible Dates &amp; Routes</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+<!-- Service 2: Family Holidays -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-8 hover:border-secondary transition-all duration-300 hover:shadow-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="family_restroom">family_restroom</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Family Holidays
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Stress-free vacations curated for multi-generational families with kid-friendly activities, comfortable stays, and spacious transit.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span class="">Multi-Gen Comfort</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+<!-- Service 3: Couple & Honeymoon Trips -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-8 hover:border-secondary transition-all duration-300 hover:shadow-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="favorite">favorite</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Couple &amp; Honeymoon Trips
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Romantic escapes featuring private candle-lit dinners, scenic panoramic views, boutique resort stays, and serene privacy across India.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span class="">Romantic Upgrades</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+<!-- Service 4: Adventure Holidays -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-8 hover:border-secondary transition-all duration-300 hover:shadow-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="hiking">hiking</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Adventure Holidays
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              River rafting in Rishikesh, trekking across Himachal trails, desert safaris in Jaisalmer, and jungle wildlife encounters.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span class="">Certified Field Guides</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+<!-- Service 5: Spiritual & Cultural Tours -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-8 hover:border-secondary transition-all duration-300 hover:shadow-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="temple_hindu">temple_hindu</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Spiritual &amp; Cultural Tours
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Meaningful pilgrimages and cultural immersions covering Char Dham, Varanasi Ghats, Mathura-Vrindavan, Ayodhya, and historic South temples.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span class="">Priority Darshan Guidance</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+<!-- Service 6: Hotel & Transportation Assistance -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-8 hover:border-secondary transition-all duration-300 hover:shadow-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="directions_car">directions_car</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Hotel &amp; Transportation Assistance
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Curated hotel handpicks, verified chauffeur-driven cabs, airport pick-ups, and luxury tempo travellers for complete peace of mind.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span class="">Verified Vehicles &amp; Stays</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         6. WHY CUSTOMERS CHOOSE US (Key Pillars & Stat Badges)
+         ========================================================================= -->
+<section class="py-24 bg-surface-container-low/40 border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 space-y-6">
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">The TravoBharat Advantage</span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary tracking-tight">
+              Why Customers Choose Us
+            </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+              We stand apart through genuine care, rigorous ground vetting, and transparent advisory. When you travel with TravoBharat, you are not a ticket number — you are our family on journey.
+            </p>
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex items-center gap-5">
+<div class="p-3 bg-secondary-fixed/40 text-secondary rounded-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm text-on-surface">Trusted by Hundreds</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Exceptional feedback across families and groups</p>
+</div>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-3 px-6 py-3.5 bg-primary text-on-primary rounded font-label-lg text-label-lg hover:bg-primary-container transition-all active:scale-95 duration-150" href="tel:+917417647288">
+<span class="material-symbols-outlined text-lg">call</span>
+<span class="">Speak to a Planner: +91 7417647288</span>
+</a>
+</div>
+</div>
+<!-- 5 Key Pillars Grid -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Pillar 1: Personalized Planning -->
+<div class="p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm hover:border-primary transition-all">
+<div class="text-secondary mb-3 flex items-center justify-between">
+<span class="material-symbols-outlined text-3xl" data-icon="design_services">design_services</span>
+<span class="text-label-sm font-label-sm text-outline">01</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Personalized Planning</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+                Every holiday is tailored to your unique preferences, dietary habits, and pace rather than fixed cookie-cutter templates.
+              </p>
+</div>
+<!-- Pillar 2: Destination Expertise -->
+<div class="p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm hover:border-primary transition-all">
+<div class="text-primary mb-3 flex items-center justify-between">
+<span class="material-symbols-outlined text-3xl" data-icon="map">map</span>
+<span class="text-label-sm font-label-sm text-outline">02</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Destination Expertise</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+                In-depth insider knowledge of routes across Uttarakhand, Himachal, Uttar Pradesh, Rajasthan, and beyond.
+              </p>
+</div>
+<!-- Pillar 3: Customer-Focused Service -->
+<div class="p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm hover:border-primary transition-all">
+<div class="text-secondary mb-3 flex items-center justify-between">
+<span class="material-symbols-outlined text-3xl" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+<span class="text-label-sm font-label-sm text-outline">03</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Customer-Focused Service</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+                Your comfort and satisfaction are our true north. We proactively ensure hotel check-ins and transfers run flawlessly.
+              </p>
+</div>
+<!-- Pillar 4: Flexible Travel Options -->
+<div class="p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm hover:border-primary transition-all">
+<div class="text-primary mb-3 flex items-center justify-between">
+<span class="material-symbols-outlined text-3xl" data-icon="published_with_changes">published_with_changes</span>
+<span class="text-label-sm font-label-sm text-outline">04</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Flexible Travel Options</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+                Modifiable schedules, flexible room categories, and responsive on-ground itinerary adjustments when weather shifts.
+              </p>
+</div>
+<!-- Pillar 5: Dedicated Support (Span 2 columns on small screens) -->
+<div class="sm:col-span-2 p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm hover:border-secondary transition-all flex flex-col sm:flex-row sm:items-center gap-4">
+<div class="text-secondary">
+<span class="material-symbols-outlined text-4xl" data-icon="ring_volume">ring_volume</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Dedicated Support</h3>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-secondary-fixed/50 text-on-secondary-container">24/7 Live</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Real trip coordinators available by phone or WhatsApp throughout your holiday journey from departure until home return.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         7. FINAL CTA SECTION: Ready to Plan
+         ========================================================================= -->
+<section class="relative py-20 bg-primary text-on-primary overflow-hidden"><div class="absolute inset-0 z-0 overflow-hidden pointer-events-none"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK6WwMbh9s8-ZRm70KgNjX4w_NwnlXiDKaRI6NDRpNdNOQSEbJ86v6X2lXE69t1Y1zRFp_SoIe9g-okiWm9dfyeO2ezvz94F5O9WjIMhlFDJWHCjcw2Sh0MwoqGRT03mArZUG18EId7IojXaOt9OzIIL5DBQFID98QbFyNJLVs1L-06GMYVClThmrBDyRGtf9I5pEb8C__cq17IEOG4RUT0C0NMxjnffkgtPDX36N62o0wh4sidvUs" alt="Scenic Indian Landmarks" class="w-full h-full object-cover object-center filter blur-[2px] opacity-20"><div class="absolute inset-0 bg-primary/60"></div></div>
+<!-- Decorative Backdrop Geometry -->
+<div class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-tertiary-fixed/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<span class="inline-block px-3 py-1 rounded-full bg-surface/10 border border-surface/20 text-secondary-fixed text-label-sm font-label-sm uppercase tracking-wider mb-4">
+          Start Your Journey
+        </span>
+<h2 class="text-display-lg-mobile md:text-headline-lg font-display-lg-mobile md:font-headline-lg text-surface tracking-tight">
+          Let's Plan Your Next Journey
+        </h2>
+<p class="mt-4 text-body-lg font-body-lg text-surface-container-high max-w-2xl mx-auto leading-relaxed">
+          Whether you already know your destination or need help choosing one, our team is ready to help.
+        </p>
+<!-- CTAs: Call & WhatsApp -->
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-surface-container-lowest text-primary rounded font-label-lg text-label-lg shadow-md hover:bg-surface-container hover:text-on-surface transition-all active:scale-95 duration-150" href="tel:+917417647288">
+<span class="material-symbols-outlined text-xl">call</span>
+<span class="">Call +91 7417647288</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-secondary-fixed text-on-secondary-fixed rounded font-label-lg text-label-lg shadow-md hover:bg-secondary-container transition-all active:scale-95 duration-150" href="https://wa.me/917417647288" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-xl">chat</span>
+<span class="">WhatsApp Us</span>
+</a>
+</div>
+<p class="mt-6 text-body-sm font-body-sm text-surface-container/70">
+          Direct email: <a class="underline hover:text-surface" href="mailto:travobharatofficial@gmail.com">travobharatofficial@gmail.com</a>
+</p>
+</div>
+</section>
+</main>
+<!-- =========================================================================
+       8. MULTI-COLUMN FOOTER (Shared Component Execution)
+       ========================================================================= -->
+<footer class="w-full bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant/30 dark:border-outline/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+<!-- Brand Info Column -->
+<div class="lg:col-span-2 space-y-4">
+<a class="flex items-center gap-3" href="#">
+<img alt="TravoBharat Logo" class="h-12 w-auto object-contain max-h-14" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKuZ6WeO7Hh7m9_lUAe0jve1Dx-zKaXBqCnwAYdIt0IKI7Rr3345jmMPaekeE4KqGA9Z81wD_2-hjxUDp1XZEH8hFyzhYbrIgjc7QCTQ5WcCyao2QdZ5fmpNy1PWqvw9BIl8NW7MMtRe3G4Pr0qK2ZFKPEMnVyYL0rwGorRdhk0FHVCk2IDxZLoSS1GZoQF1xVWrrRuNflwbrovuT_U8gybm4xEV4RJowmHfANFKklh2dofQ4F0vN3">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">TravoBharat</span>
+</a>
+<p class="text-body-md font-body-md text-on-surface-variant dark:text-surface-variant max-w-sm leading-relaxed">
+            Thoughtfully planned holidays across India. Seamless experiences, authentic discovery, and dedicated guest care from start to finish.
+          </p>
+<div class="pt-2 flex flex-col space-y-1.5 text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant">
+<p class=""><span class="font-bold text-on-surface dark:text-inverse-on-surface">Phone:</span> +91 7417647288</p>
+<p class=""><span class="font-bold text-on-surface dark:text-inverse-on-surface">WhatsApp:</span> +91 7417647288</p>
+<p class=""><span class="font-bold text-on-surface dark:text-inverse-on-surface">Email:</span> travobharatofficial@gmail.com</p>
+</div>
+</div>
+<!-- Destinations Column -->
+<div class="space-y-3">
+<h4 class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary">Destinations</h4>
+<ul class="space-y-2 text-label-sm font-label-sm">
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Uttarakhand</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Himachal Pradesh</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Uttar Pradesh</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Destinations</a></li>
+</ul>
+</div>
+<!-- Quick Links Column -->
+<div class="space-y-3">
+<h4 class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary">Company</h4>
+<ul class="space-y-2 text-label-sm font-label-sm">
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Home</a></li>
+<li class=""><a class="text-primary dark:text-inverse-primary font-medium" href="#">About Us</a></li><li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Travel Blog</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<!-- Trust & Policies -->
+<div class="space-y-3">
+<h4 class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary">Legal &amp; Trust</h4>
+<ul class="space-y-2 text-label-sm font-label-sm">
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright Sub-bar -->
+<div class="mt-12 pt-8 border-t border-outline-variant/30 dark:border-outline/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant">
+          © 2020 TravoBharat. All rights reserved.
+        </p>
+<div class="flex items-center gap-6 text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant">
+<span class="">Crafted with hospitality &amp; pride for India</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- =========================================================================
+       FLOATING WHATSAPP BUTTON (Bottom Right Action Anchor)
+       ========================================================================= -->
+<aside class="fixed bottom-6 right-6 z-50">
+<a aria-label="Direct WhatsApp Contact" class="flex items-center gap-3 px-4 py-3 bg-secondary text-on-secondary rounded-full shadow-xl hover:bg-on-secondary-container transition-all hover:scale-105 active:scale-95 group focus:outline-none focus:ring-2 focus:ring-secondary-container" href="https://wa.me/917417647288" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-2xl" data-icon="chat">chat</span>
+<span class="text-label-md font-label-md hidden sm:inline-block pr-1 font-bold">Chat with Us</span>
+</a>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

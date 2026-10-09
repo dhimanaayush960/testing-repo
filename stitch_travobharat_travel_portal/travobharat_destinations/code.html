@@ -1,0 +1,830 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Destinations — TravoBharat | Explore Incredible India</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#1a5f7a",
+            "secondary-container": "#86f2e4",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#001e2b",
+            "surface-container": "#eaedff",
+            "on-background": "#131b2e",
+            "secondary-fixed-dim": "#6bd8cb",
+            "inverse-primary": "#92cfee",
+            "tertiary-fixed": "#ffdf98",
+            "on-tertiary-container": "#f7c952",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#251a00",
+            "inverse-on-surface": "#eef0ff",
+            "surface-variant": "#dae2fd",
+            "surface-tint": "#236580",
+            "surface-container-high": "#e2e7ff",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#5a4300",
+            "surface-dim": "#d2d9f4",
+            "outline-variant": "#c0c8cd",
+            "surface-container-low": "#f2f3ff",
+            "on-surface-variant": "#40484d",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#89f5e7",
+            "on-secondary-container": "#006f66",
+            "on-surface": "#131b2e",
+            "surface": "#faf8ff",
+            "tertiary": "#523e00",
+            "on-primary-fixed-variant": "#004d66",
+            "secondary": "#006a61",
+            "primary": "#00475e",
+            "primary-fixed-dim": "#92cfee",
+            "primary-fixed": "#c0e8ff",
+            "on-secondary-fixed": "#00201d",
+            "on-secondary-fixed-variant": "#005049",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#6f5400",
+            "tertiary-fixed-dim": "#eec14b",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#9bd7f7",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "background": "#faf8ff",
+            "outline": "#70787d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- ==================== TOP NAVIGATION BAR ==================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 shadow-sm dark:shadow-none transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Logo Anchor -->
+<a class="flex items-center gap-3 group active:scale-95 transition-transform duration-150" href="#">
+<img alt="TravoBharat Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOkDbRgQaXKztuVIK6jQT74odvO5j0jqjkDKC5yk-pJqOrEdQJ5gW2gl1H7_z6blD1s-T9FdsMVyFZ0f3AMyOFDFj3VTZxyXBahrdn367avenRJFA0aqeO2qlFXACXS-eLUK-mdkTGU6LY4ZlTGWXzrUBvR25fCocax-1IAnd_MIMrYjCBr4VtGERvmpf8AmQa-QmXF1rSfp6mhhegUNZwrn9TexPG-R-_zekTReaNiH2IQfzmjiZu">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">TravoBharat</span>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150 text-label-lg font-label-lg" href="/stitch_travobharat_travel_portal/travobharat_home/code.html">Home</a>
+<!-- Active Lock: Destinations -->
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary dark:border-inverse-primary pb-1 active:scale-95 transition-all text-label-lg font-label-lg" href="/stitch_travobharat_travel_portal/travobharat_destinations/code.html">Destinations</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150 text-label-lg font-label-lg" href="/stitch_travobharat_travel_portal/travobharat_about_us/code.html">About Us</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150 text-label-lg font-label-lg" href="/stitch_travobharat_travel_portal/travobharat_travel_stories_tips_inspiration/code.html">Blog</a><a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150 text-label-lg font-label-lg" href="/stitch_travobharat_travel_portal/travobharat_contact_us/code.html">Contact Us</a>
+</nav>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3">
+<!-- Call Now Action -->
+<a class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 border border-secondary text-secondary hover:bg-secondary hover:text-on-secondary rounded font-label-lg text-label-lg transition-colors duration-150 active:scale-95" href="tel:+917417647288">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="call">call</span>
+<span class="">Call Now</span>
+</a>
+<!-- WhatsApp Action -->
+<a class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-on-primary hover:bg-primary-container rounded font-label-lg text-label-lg shadow-sm transition-all duration-150 active:scale-95" href="https://wa.me/917417647288" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="chat">chat</span>
+<span class="">WhatsApp</span>
+</a>
+<!-- Mobile Menu Trigger -->
+<button aria-label="Open Menu" class="md:hidden p-2 rounded-lg text-on-surface-variant hover:bg-surface-container active:scale-95 transition-colors" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Push content down for fixed navbar -->
+<div class="h-20"></div>
+<!-- ==================== HERO BANNER & FILTER TABS ==================== -->
+<section class="relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden border-b border-outline-variant/20">
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-high/40 via-surface to-background -z-10 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<!-- Regal Eyebrow Tag -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/40 mb-6 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-sm font-label-sm text-primary tracking-wider uppercase">Authentic Bharat Expeditions</span>
+</div>
+<!-- Main Headline -->
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-primary max-w-4xl mx-auto mb-5 leading-tight">
+        Explore Incredible India
+      </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+        Discover mountains, heritage, spirituality, adventure and unforgettable experiences with TravoBharat.
+      </p>
+<!-- Interactive Destination Filter Tabs -->
+<div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap max-w-xl mx-auto bg-surface-container-lowest p-1.5 rounded-full border border-outline-variant/40 shadow-sm" id="destination-filters">
+<button class="filter-tab px-5 py-2 rounded-full text-label-md font-label-md bg-primary text-on-primary transition-all duration-200" id="tab-all" onclick="filterDestination('all')" type="button">
+          All
+        </button>
+<button class="filter-tab px-5 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-200" id="tab-uttarakhand" onclick="filterDestination('uttarakhand')" type="button">
+          Uttarakhand
+        </button>
+<button class="filter-tab px-5 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-200" id="tab-himachal" onclick="filterDestination('himachal')" type="button">
+          Himachal Pradesh
+        </button>
+<button class="filter-tab px-5 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-200" id="tab-uttarpradesh" onclick="filterDestination('uttarpradesh')" type="button">
+          Uttar Pradesh
+        </button>
+</div>
+</div>
+</section>
+<!-- ==================== UTTARAKHAND REGION ==================== -->
+<section class="destination-region py-16 md:py-24 border-b border-outline-variant/20 transition-all duration-300" id="uttarakhand">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Regional Banner Card -->
+<div class="relative rounded-2xl overflow-hidden mb-12 shadow-sm border border-outline-variant/30 group">
+<div class="relative h-72 sm:h-96 w-full">
+<img class="w-full h-full object-cover transform duration-700 group-hover:scale-105" data-alt="Breathtaking wide landscape photo of Rishikesh in Uttarakhand at golden hour sunrise with the holy Ganges river flowing through majestic emerald Himalayan foothills and suspension bridge visible. Warm glowing natural morning sunlight casting soft reflections upon the pristine water. Peaceful atmosphere, high-end travel editorial style with deep teal waters and ivory clouds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_PL4YiPYwJT7cBkY0MluZ9Lv5C4_5QuD81J_hP0wOZYBbQrFByS3cpzGih7euHvCzt16ko4_p5KLjjd34VH25OFgbT79Zuro0NVrVwAiq8wftdB9P_RWzOwZABwrN13NnJbV6N-MdIvfwiKr008l0qW_ISMfUToU8_BqCKgnHnaCm6P1f5irbQijazv11n7_Cmuq36G1rdT8onfStRiAp_kfmpVaGBoEo-NG9Y4A">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 text-on-primary">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary/80 backdrop-blur-sm text-on-secondary text-label-sm font-label-sm mb-3">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="landscape">landscape</span>
+<span class="">Land of the Gods</span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-primary mb-3">
+            Uttarakhand
+          </h2>
+<p class="text-body-md font-body-md text-surface-container-low max-w-3xl leading-relaxed">
+            From the peaceful ghats of Rishikesh and Haridwar to the scenic beauty of Nainital, Mussoorie and Jim Corbett, Uttarakhand offers the perfect mix of nature, spirituality and adventure.
+          </p>
+</div>
+</div>
+<!-- Popular Places Chips -->
+<div class="mb-10 flex items-center gap-2 flex-wrap">
+<span class="text-label-md font-label-md text-on-surface-variant mr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="explore">explore</span> Popular Places:
+        </span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Rishikesh</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Haridwar</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Nainital</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Mussoorie</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Jim Corbett</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Auli</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Kausani</span>
+</div>
+<!-- Uttarakhand Packages Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+<!-- Package 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Evening Ganga Aarti ritual ceremony along the ancient stone steps of Haridwar and Rishikesh ghats with glowing brass fire lamps and reflective water. Traditional devotional ambiance under dusk twilight with deep blue sky and serene warm amber candles floating on the holy river. Editorial hospitality photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgXYLvRKX4NrI1l3mwRCNQU1armSth-4PbXNdadMi19AzL0EqivmQnAzrKNthrTR7KOgzSYouZfJ0M6yp0K-hhvUsDqmuwQjxOA8zcXU07Ank7cBALl0Xgbc2xvYdDFhe_kaShwiRLCoWznYXrPm3vlucIPrRHD_aRieT2Ism0AjDp8gr4pf51qi5tMb7dsoenpI0q4BAE_UaJ6Cw0oRgTFP_9u_ErWmhMaMm6ago">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 3N/4D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Rishikesh • Haridwar</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Uttarakhand Weekend Escape</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Evening Ganga Aarti at Parmarth Niketan, river rafting thrill, Laxman Jhula strolls, and temple visits.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹8,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Uttarakhand%20Weekend%20Escape%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Scenic calm view of Naini Lake in Nainital surrounded by lush green pine mountains with colorful wooden rowing boats moored along the tranquil dock. Clear bright sky with gentle mist rising from the hills, warm sunlight filtering down. High-end nature holiday photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk6Hm-GNMGiqETetwk6FIE1owFSfpcBk5oZHtS7Y6ip-lqE9L3UlWqp-EruSglMQVK9pbxkc-kQvXe6uI-7EwgX_hgrAFIHKrRjxl8kP-fzkAiFA2gcv3-UN4QIvFoZfUuHa8HSn4QjWNaswad51y1wRzBtKoBkH4c4_QSFY5RDPjj08OkyMgR0POYyxMMRGvyxMIdCSwZ32xhjyG1UZbRQWiD5uKMF0eBgOMYg0U">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 4N/5D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Nainital • Jim Corbett</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Nainital &amp; Jim Corbett Holiday</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Boating in scenic Naini Lake, snow viewpoint, and early morning open jeep jungle safari in India's oldest national park.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹12,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Nainital%20%26%20Jim%20Corbett%20Holiday%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Mussoorie mist-covered mountain ridge showing Kempty Falls cascading into turquoise pools amidst dense pine and oak forests. Soft cool alpine atmosphere with warm golden rim light on the mountain peaks. Refined travel brochure imagery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxJA_OyMS6tuGQtPXyP_LDcHyTW-hlk0kzx_wyWceszCM8QQBTffkYKwy3110svtOyS34yngWpnEekXNwhkCQSizR8s6_DssDDzG6BJOsmD7qRPaehUj79OdopD_-dpjzeOSEgzeKwH_XazYkVi0UKyBEp6DcN2NA5IaM6lKNZch4BlGWToA37dARDSje9g_NUWVfekLua5rZU48p96CWq_hOQ9BXM8jP885GlwMw">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 4N/5D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Mussoorie • Dhanaulti</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Mussoorie &amp; Dhanaulti Escape</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Kempty Falls, scenic Gun Hill ropeway, deodar trails of Eco Park Dhanaulti, and panoramic Himalayan viewpoints.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹11,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Mussoorie%20%26%20Dhanaulti%20Escape%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Regional CTA -->
+<div class="text-center">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-sm transition-all duration-150 active:scale-95" href="https://wa.me/917417647288?text=Hello%2C%20I%20would%20like%20to%20get%20a%20custom%20Uttarakhand%20quote." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="request_quote">request_quote</span>
+<span class="">Get Uttarakhand Quote</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ==================== HIMACHAL PRADESH REGION ==================== -->
+<section class="destination-region py-16 md:py-24 border-b border-outline-variant/20 bg-surface-container-low/50 transition-all duration-300" id="himachal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="max-w-3xl mb-12">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm mb-3">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="ac_unit">ac_unit</span>
+<span class="">The Land of Snows</span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-3">
+          Himachal Pradesh
+        </h2>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+          Experience the beauty of the Himalayas through scenic valleys, mountain towns, adventure activities and peaceful escapes.
+        </p>
+<!-- Popular Places Tags -->
+<div class="mt-6 flex items-center gap-2 flex-wrap">
+<span class="text-label-md font-label-md text-on-surface-variant mr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="explore">explore</span> Popular Places:
+          </span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Shimla</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Manali</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Kasol</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Dharamshala</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Dalhousie</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Spiti Valley</span>
+</div>
+</div>
+<!-- Himachal Packages Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+<!-- Package 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Majestic snow-capped alpine peaks of Solang Valley and Rohtang Pass near Manali under crisp azure skies. Traditional pine chalets dotted along green mountain slopes with crisp white glaciers in the distance. Vivid warm sunshine casting gentle shadows across untouched powdery snow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkEZ9vkFWP7JS9si73c1v5MKp177zJEYc9tZ_K1v38rRKJjoztVjbBWj0ViXhx01okCwxs-JdrLxAjoRp2XAG6t5HE9abPC1QaCLk1y-S2Oz4_1WVb8TEoNv-AwN-0yZW19jRHQoPJ7HBFPh5PEbjHtrLI40VRtv9Dp-34JkqIBvs-bUMP9XLDa9DpLJDwv3o7fDkfY6YPWWEhRM6AtkPww5Y6QcnduDCXM2FN2bE">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 3N/4D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Solang • Rohtang Pass</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Manali Escape</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Snow adventures in Solang Valley, Rohtang Pass excursion, Hadimba Temple visit, and Old Manali riverside cafes.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹10,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Manali%20Escape%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Charming colonial architecture on Shimla Ridge and Mall Road with the famous Christ Church bathed in golden twilight glow. Snow-dusted Himalayan peaks in the background with cozy warm street lamps and strolling pedestrians. Crisp clean mountain atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgQh_HoXx-8ikn-DF3FWEn14x_c9IA9rklmkPSgi2Kl-ChSNcCFJSghI-XwjUlOJ2UK7H72PN0O9VFXcZHboRpL66BLBq_4R7lWL9FRBoqmYoPPkeqfNnlMn1avi0T5Xs14Ol91bhPOQEJ1xwGw2l4h0BgUIQsF6EZ2CeeVzmgYf0LGNMKwyD3KA3y_29U8eDIwEt2vh8HmrNQhW4TsYG7z-VOGjwmZZF1YukPfm4">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 5N/6D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Kufri • Mall Road • Solang</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Shimla &amp; Manali Holiday</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Classic Himachal discovery featuring colonial Shimla, Kufri horseback adventures, Kullu river rafting, and Manali valley.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹14,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Shimla%20%26%20Manali%20Holiday%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Serene panoramic view of Khajjiar known as Mini Switzerland of India, featuring a lush green alpine saucer meadow surrounded by towering cedar trees and a tranquil pond, with McLeod Ganj Tibetan monasteries nestled in Dhauladhar range peaks. Soft cinematic daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDunrlIYx--0Lws9CUoH5kol06vPznh9jbuwIYNQHBlUpY1xM6RUmjQgpkOzcdjzr4uqBJFwYn7sQTTSqPTgLQuS0X_NllGZNaicQCMx9LOtqaeHLtCz8j9EcTlhbXTI1RZ0QleASRyhe01SOKaGEy22A2Ogu6rE2p80tf_LHrEAjUwu-C-8AD4qa86cz3iq0COpB7gX-vdncLPqA15dQM7IKkSnr2XJPOpdd4F5W4">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 4N/5D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">McLeod Ganj • Khajjiar</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Dharamshala &amp; Dalhousie Escape</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Tibetan culture at Dalai Lama Temple, serene cedar forests of Dalhousie, and the verdant mini-Switzerland meadows of Khajjiar.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹12,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Dharamshala%20%26%20Dalhousie%20Escape%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Regional CTA -->
+<div class="text-center">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-sm transition-all duration-150 active:scale-95" href="https://wa.me/917417647288?text=Hello%2C%20I%20would%20like%20to%20get%20a%20custom%20Himachal%20quote." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="request_quote">request_quote</span>
+<span class="">Get Himachal Quote</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ==================== UTTAR PRADESH REGION ==================== -->
+<section class="destination-region py-16 md:py-24 border-b border-outline-variant/20 transition-all duration-300" id="uttarpradesh">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="max-w-3xl mb-12">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm mb-3">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="fort">fort</span>
+<span class="">Cradle of Civilization</span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-3">
+          Uttar Pradesh
+        </h2>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+          Explore India's rich history, spiritual destinations, iconic monuments and timeless cultural experiences.
+        </p>
+<!-- Popular Places Tags -->
+<div class="mt-6 flex items-center gap-2 flex-wrap">
+<span class="text-label-md font-label-md text-on-surface-variant mr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="explore">explore</span> Popular Places:
+          </span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Agra</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Mathura</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Vrindavan</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Varanasi</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Ayodhya</span>
+<span class="px-3.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant/40 text-primary">Lucknow</span>
+</div>
+</div>
+<!-- Uttar Pradesh Packages Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+<!-- Package 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Majestic sunrise view of the Taj Mahal in Agra reflected flawlessly on the calm Yamuna river waters. Warm golden morning mist enveloping the pure white marble domes and minarets. Royal heritage architecture composition with authentic luxury travel aesthetic and subtle golden hour glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCasiUprk7mVcbxZ5bTrqoCjLiq4t5mu-2BG9VDTUKSROgd9YZVKBnBIP_PS_VxXas-O5RHvEsSjml01LG8wVsGoSegr1ywim027375QRYeOsOmd4S6Mpdmca63NCprhJJ5dZtPgsblwuHk7hIXhHycKG9l74YV3VCEqER0fAAUuvl1iR1HBhgxSeJ-OyhEWV98ASP6eq1WLCey-7lPP-hvkxCS-OuKNX96Td-wzNA">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 3N/4D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Taj Mahal • Krishna Janmabhoomi</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Agra &amp; Mathura Escape</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Taj Mahal sunrise tour, historic Agra Fort, and sacred pilgrimage to Shri Krishna Janmabhoomi temple complex in Mathura.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹7,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Agra%20%26%20Mathura%20Escape%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Ornate marble carved Prem Mandir temple in Vrindavan illuminated with soft architectural lighting at dusk. Devotees walking gracefully along the spacious paved courtyards surrounded by lush devotional gardens. High aesthetic quality cultural heritage photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3hGcF5zPGHd-uY-M2I7HGhSnNXd03oTDytClydiJeaYTcxYXme8A508BuhX0ZEBFDNtktuN_ruY0SyE-XScWtc391ijTSmXJ4i97sbLHXWdqBezTfrGKdG_-1-VZcLacUdeTBZweNNE5mxurNbLTviC2FJvemRAorwgKj8a-ONOVLUWeOCtb94aDdvIi0XYJhV68N04yIa-58PUNzZhHhY3QCJvuM7c_-AE4QtZQ">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 4N/5D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Heritage &amp; Spiritual Circuit</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Agra • Mathura • Vrindavan</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Complete Braj Bhoomi pilgrimage covering Prem Mandir, Banke Bihari, Iskcon, paired with the regal wonders of Mughal Agra.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹9,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Agra%20Mathura%20Vrindavan%20package." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col hover:border-primary-container transition-all duration-200">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Panoramic perspective of the sacred Dashashwamedh Ghat in Varanasi during twilight with priests performing the grand Ganga Aarti with tall brass lamps, and the newly constructed grand sandstone Ram Mandir temple in Ayodhya with glowing shikharas. Deep twilight blue and ceremonial warm gold light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9WQxq-pHNlFQmPaZi41TLMM55Ib6aJwzYFH9i0_D_efqN54ZBPW6PTAGFxlB308X2nxzsAq1hEyPt97fKr_n-9KrZXX2BxAXcmNh6AtL2o4jovlN-B4Es_P5AvjSOtbfihga3CsX3KrRaU8wsYe8oLWgTBeaBB6nS5W8Hvsrp-X8ItC2tjOE1CRCrzkmluHwK30iZ9VdN0QSYMF7fgRyCWPiFpwUbOHVqxXRvd4U">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="schedule">schedule</span> 4N/5D
+            </span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Ganga Aarti • Ram Mandir</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Varanasi &amp; Ayodhya Spiritual Journey</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 flex-1">
+              Historic morning boat cruise on Varanasi ghats, evening Ganga Aarti, Kashi Vishwanath Darshan, and sacred Ayodhya Ram Mandir visit.
+            </p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-baseline justify-between mb-5">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Starting from</span>
+<span class="text-headline-sm font-headline-sm text-primary">₹10,999<span class="text-label-sm font-label-sm text-on-surface-variant font-normal">/person</span></span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<a class="inline-flex justify-center items-center px-3 py-2 rounded border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-colors" href="#contact">
+                View Details
+              </a>
+<a class="inline-flex justify-center items-center gap-1 px-3 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" href="https://wa.me/917417647288?text=Hello%2C%20I%20am%20interested%20in%20the%20Varanasi%20%26%20Ayodhya%20Spiritual%20Journey." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm leading-none" data-icon="chat">chat</span> Enquire Now
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Regional CTA -->
+<div class="text-center">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-sm transition-all duration-150 active:scale-95" href="https://wa.me/917417647288?text=Hello%2C%20I%20would%20like%20to%20get%20a%20custom%20Uttar%20Pradesh%20quote." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="request_quote">request_quote</span>
+<span class="">Get Uttar Pradesh Quote</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ==================== CUSTOM ITINERARY ENQUIRY CARD ==================== -->
+<section class="py-16 md:py-24 bg-surface-container-low/70" id="custom-plan">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/40 shadow-md p-8 md:p-12 relative overflow-hidden"><div class="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK6WwMbh9s8-ZRm70KgNjX4w_NwnlXiDKaRI6NDRpNdNOQSEbJ86v6X2lXE69t1Y1zRFp_SoIe9g-okiWm9dfyeO2ezvz94F5O9WjIMhlFDJWHCjcw2Sh0MwoqGRT03mArZUG18EId7IojXaOt9OzIIL5DBQFID98QbFyNJLVs1L-06GMYVClThmrBDyRGtf9I5pEb8C__cq17IEOG4RUT0C0NMxjnffkgtPDX36N62o0wh4sidvUs" alt="Famous Indian Landmarks Montage" class="w-full h-full object-cover opacity-15 filter blur-[2px] scale-105 pointer-events-none"></div>
+<!-- Subtle Decorative Accent Background -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-7">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary-container text-on-secondary-container text-label-sm font-label-sm mb-4">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="tune">tune</span>
+<span class="">Tailor-Made Travel</span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-4">
+              Can't find your ideal package?
+            </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed mb-6">
+              Tell us your dates, budget and requirements. We'll create a customized trip for you.
+            </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+<a class="inline-flex justify-center items-center gap-2 px-6 py-3.5 bg-primary text-on-primary hover:bg-primary-container rounded font-label-lg text-label-lg shadow-sm transition-all duration-150 active:scale-95" href="#inquiry-modal" onclick="document.getElementById('quick-inquiry-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="edit_calendar">edit_calendar</span>
+<span class="">Create My Trip</span>
+</a>
+<a class="inline-flex justify-center items-center gap-2 px-6 py-3.5 border border-secondary text-secondary hover:bg-secondary hover:text-on-secondary rounded font-label-lg text-label-lg transition-colors duration-150 active:scale-95" href="https://wa.me/917417647288?text=Hello%20TravoBharat%2C%20I%20would%20like%20to%20plan%20a%20customized%20itinerary." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="chat">chat</span>
+<span class="">WhatsApp Quick Inquiry</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-5 bg-surface-container-low p-6 rounded-xl border border-outline-variant/30">
+<h4 class="text-headline-sm font-headline-sm text-primary mb-4">Why Customize With TravoBharat?</h4>
+<ul class="space-y-3 text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg leading-tight" data-icon="check_circle">check_circle</span>
+<span class="">Dedicated personal trip coordinator</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg leading-tight" data-icon="check_circle">check_circle</span>
+<span class="">Verified boutique stays &amp; premium transport</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg leading-tight" data-icon="check_circle">check_circle</span>
+<span class="">Transparent pricing with zero hidden surcharges</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg leading-tight" data-icon="check_circle">check_circle</span>
+<span class="">24/7 on-ground emergency support</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== CONTACT / TRUST STRIP ==================== -->
+<section class="py-12 border-b border-outline-variant/20 bg-surface" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+<div class="p-4 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-2" data-icon="phone_in_talk">phone_in_talk</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Direct Assistance</span>
+<a class="text-headline-sm font-headline-sm text-primary hover:underline" href="tel:+917417647288">+91 7417647288</a>
+</div>
+<div class="p-4 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-2" data-icon="mail">mail</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Email Reservations</span>
+<a class="text-headline-sm font-headline-sm text-primary hover:underline" href="mailto:travobharatofficial@gmail.com">travobharatofficial@gmail.com</a>
+</div>
+<div class="p-4 flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2" data-icon="forum">forum</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Instant WhatsApp</span>
+<a class="text-headline-sm font-headline-sm text-secondary hover:underline" href="https://wa.me/917417647288" rel="noopener noreferrer" target="_blank">+91 7417647288</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== SHARED COMPONENT: FOOTER ==================== -->
+<footer class="w-full bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant/30 dark:border-outline/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
+<!-- Brand identity col -->
+<div class="md:col-span-4 flex flex-col items-start">
+<div class="flex items-center gap-3 mb-4">
+<img alt="TravoBharat Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ-7QbokzLQJKMoVAu7lTSarjD5lluIa8PywZxKXotjIQbteCZDdT2lHk2LqrCagj5uHG9OHs0QexeWHFbnHLzGuiOx74yBgEM5sfgqSjWnkPtZEdF_a4qNN-prBeYMM9qs7MH6nJk7fmgL8Lu7J6AyQo5LOLWFhI1kKJhfi_1eTMh8cxRWYqgBlEFo6-NPfHVxVU4oZOfQgOaewsOEpJDtsXQuSuqYk_ZcsHurs48COH-YLTndUUA">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">TravoBharat</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant dark:text-surface-variant mb-6 max-w-sm">
+            Curating royal, scenic, and spiritual travel journeys across the diverse landscapes of India with bespoke hospitality.
+          </p>
+<div class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant space-y-1">
+<p class=""><strong>Support:</strong> +91 7417647288</p>
+<p class=""><strong>Email:</strong> travobharatofficial@gmail.com</p>
+</div>
+</div>
+<!-- Links col: Destinations -->
+<div class="md:col-span-3">
+<h4 class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary mb-4">Destinations</h4>
+<ul class="space-y-2.5 text-body-md font-body-md">
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#uttarakhand">Uttarakhand</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#himachal">Himachal Pradesh</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#uttarpradesh">Uttar Pradesh</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#destinations">Destinations Overview</a></li>
+</ul>
+</div>
+<!-- Links col: Quick links -->
+<div class="md:col-span-2">
+<h4 class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary mb-4">Company</h4>
+<ul class="space-y-2.5 text-body-md font-body-md">
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Home</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#about">About Us</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#blog">Blog</a></li><li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#contact">Contact Us</a></li>
+</ul>
+</div>
+<!-- Links col: Legal -->
+<div class="md:col-span-3">
+<h4 class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary mb-4">Legal &amp; Policies</h4>
+<ul class="space-y-2.5 text-body-md font-body-md">
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms &amp; Conditions</a></li>
+<li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Cancellation &amp; Refund Policy</a></li>
+</ul>
+</div>
+</div>
+<!-- Footer Bottom Division -->
+<div class="pt-8 border-t border-outline-variant/30 dark:border-outline/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant">
+          © 2020 TravoBharat. All rights reserved.
+        </p>
+<div class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm">
+<span class="">Made with pride in Bharat</span>
+<span class="">•</span>
+<a class="hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy</a>
+<span class="">•</span>
+<a class="hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+<div class="fixed bottom-6 right-6 z-50">
+<a aria-label="Chat on WhatsApp" class="relative group flex items-center justify-center w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-lg hover:bg-on-secondary-container transition-transform duration-200 hover:scale-105 active:scale-95" href="https://wa.me/917417647288" rel="noopener noreferrer" target="_blank">
+<!-- Pulsating halo effect -->
+<span class="absolute inset-0 rounded-full bg-secondary opacity-75 animate-ping pointer-events-none"></span>
+<span class="material-symbols-outlined text-2xl relative z-10" data-icon="chat">chat</span>
+<!-- Tooltip on hover -->
+<span class="absolute right-16 top-1/2 -translate-y-1/2 bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm px-3 py-1.5 rounded shadow whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200">
+        Chat with Trip Expert
+      </span>
+</a>
+</div>
+<!-- ==================== QUICK INQUIRY MODAL (Vanilla JS Controlled) ==================== -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="quick-inquiry-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-outline-variant/30 relative">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1 rounded-full" onclick="document.getElementById('quick-inquiry-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+<div class="mb-5">
+<h3 class="text-headline-md font-headline-md text-primary mb-1">Create Your Custom Trip</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Fill in your travel preferences and our destination specialist will reach out within 2 hours.</p>
+</div>
+<form class="space-y-4" onsubmit="handleInquirySubmit(event)">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Full Name</label>
+<input class="w-full px-3.5 py-2.5 rounded bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-body-md" placeholder="e.g. Aarav Sharma" required="" type="text">
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Phone Number</label>
+<input class="w-full px-3.5 py-2.5 rounded bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-body-md" placeholder="+91 98765 43210" required="" type="tel">
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Preferred Destination</label>
+<select class="w-full px-3.5 py-2.5 rounded bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-body-md">
+<option>Uttarakhand</option>
+<option>Himachal Pradesh</option>
+<option>Uttar Pradesh</option>
+<option>Multi-State Circuit</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Travelers</label>
+<input class="w-full px-3.5 py-2.5 rounded bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-body-md" min="1" type="number" value="2">
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Approx. Budget (₹)</label>
+<input class="w-full px-3.5 py-2.5 rounded bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-body-md" placeholder="e.g. 25,000" type="text">
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Special Requirements</label>
+<textarea class="w-full px-3.5 py-2 rounded bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-body-md" placeholder="Hotel rating, car preference, pilgrimage focus, dates..." rows="3"></textarea>
+</div>
+<button class="w-full py-3 px-4 rounded bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg transition-all duration-150 shadow-sm" type="submit">
+          Submit Itinerary Request
+        </button>
+</form>
+</div>
+</div>
+<!-- Micro-Interactions Script -->
+<script>
+    function filterDestination(region) {
+      const tabs = ['all', 'uttarakhand', 'himachal', 'uttarpradesh'];
+      const regions = {
+        'uttarakhand': document.getElementById('uttarakhand'),
+        'himachal': document.getElementById('himachal'),
+        'uttarpradesh': document.getElementById('uttarpradesh')
+      };
+
+      // Reset tab styling
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        if (btn) {
+          if (t === region) {
+            btn.className = "filter-tab px-5 py-2 rounded-full text-label-md font-label-md bg-primary text-on-primary transition-all duration-200";
+          } else {
+            btn.className = "filter-tab px-5 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-200";
+          }
+        }
+      });
+
+      // Filter display logic
+      if (region === 'all') {
+        Object.values(regions).forEach(sec => {
+          if (sec) sec.style.display = 'block';
+        });
+      } else {
+        Object.keys(regions).forEach(key => {
+          if (regions[key]) {
+            if (key === region) {
+              regions[key].style.display = 'block';
+              regions[key].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+              regions[key].style.display = 'none';
+            }
+          }
+        });
+      }
+    }
+
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      alert("Thank you! Your trip inquiry has been received. Our TravoBharat travel specialist will contact you shortly.");
+      document.getElementById('quick-inquiry-modal').classList.add('hidden');
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
